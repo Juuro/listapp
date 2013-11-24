@@ -1,0 +1,33 @@
+<h1><%= t(:buy) %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t(:name) %></th>
+      <th><%= t(:price) %></th>
+      <th><%= t(:url) %></th>
+      <th><%= t(:date_text) %></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.name %></td>
+        <td><%= number_to_currency item.price %></td>
+        <td><%= link_to item.url, item.url %></td>
+        <td><%= l item.date %></td>
+        <td><%= link_to t(:show), item %></td>
+        <td><%= link_to t(:edit), edit_item_path(item) %></td>
+        <td><%= link_to t(:delete), item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t(:new_item), new_item_path %>

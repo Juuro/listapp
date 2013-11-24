@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t(:name) %></strong>
+  <%= @item.name %>
+</p>
+
+<p>
+  <strong><%= t(:price) %></strong>
+  <%= number_to_currency @item.price %>
+</p>
+
+<p>
+  <strong><%= t(:url) %></strong>
+  <%= link_to @item.url, @item.url %>
+</p>
+
+<p>
+  <strong><%= t(:date_text) %></strong>
+  <%= l @item.date %>
+</p>
+
+<%= link_to t(:edit), edit_item_path(@item) %> |
+<%= link_to t(:back), items_path %>
