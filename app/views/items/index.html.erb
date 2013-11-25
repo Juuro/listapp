@@ -18,7 +18,7 @@
       <tr>
         <td><%= item.name %></td>
         <td><%= number_to_currency item.price %></td>
-        <td><%= link_to item.url, item.url %></td>
+        <td><%= link_to item.url, item.url, title: item.url %></td>
         <td><%= l item.date %></td>
         <td><%= link_to t(:show), item %></td>
         <td><%= link_to t(:edit), edit_item_path(item) %></td>
